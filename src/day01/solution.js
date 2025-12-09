@@ -1,5 +1,5 @@
 /**
- * Advent of Code 2025 - Day XX
+ * Advent of Code 2025 - Day 01
  * Template for daily solutions
  */
 
