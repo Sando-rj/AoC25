@@ -1,0 +1,20 @@
+{
+  "name": "advent-of-code-2025",
+  "version": "1.0.0",
+  "description": "Advent of Code 2025 solutions in JavaScript",
+  "main": "runner.js",
+  "type": "module",
+  "scripts": {
+    "start": "node runner.js",
+    "day": "node runner.js",
+    "debug": "node --inspect-brk runner.js"
+  },
+  "keywords": [
+    "advent-of-code",
+    "aoc",
+    "javascript"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
