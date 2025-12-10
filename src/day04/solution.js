@@ -50,8 +50,30 @@ function findNeighbourCount(array, x, y){
  * @returns {string|number} The answer for part 2
  */
 export function part2(input) {
-  const lines = input.split('\n');
+  const array = input.split('\n').map(item => item.split(''));
   let result = 0;
+  let changeCount = 0;
+  do {
+    changeCount = 0;
+    changeCount = removalIteration(array);
+    result += changeCount;
+  } while(changeCount > 0);
 
   return result;
+}
+
+function removalIteration(array){
+  let changeCount = 0;
+  for(let i = 0; i < array.length; i++){
+    for(let j = 0; j < array[0].length; j++){
+      if(array[i][j] !== "@")
+        continue;
+      const rollNum = findNeighbourCount(array, i, j);
+      if(rollNum < 4){        
+        changeCount++;
+        array[i][j] = '.';
+      }
+    }
+  }
+  return changeCount;
 }
