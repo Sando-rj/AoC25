@@ -55,20 +55,18 @@ function parseInput(input){
  * @param {string} input - The puzzle input
  * @returns {string|number} The answer for part 2
  */
-/*
-export function part2(input) {
+
+export function minePart2(input) {
   let [rangeList, idList] = parseInput(input);
   rangeList = rangeList.sort((a, b) => parseInt(a[0]) - parseInt(b[0]));
   let fusedRangeList = fuseRanges(rangeList);
   let result = 0;
-  console.log(rangeList);
-  console.log(fusedRangeList);
   for(let range of fusedRangeList) {
     result += range[1] - range[0] + 1;
   }
   return result;
 }
-*/
+
 
 export function part2(input){
   let total = 0;
@@ -98,6 +96,8 @@ export function part2(input){
 
   total = fresh.reduce((acc, cur) => (cur.end - cur.start + 1) + acc, 0)
   console.log(`Answer: ${total}`);
+  console.log("Mine Answer: " + minePart2(input));
+  console.log("Diff Answer: " + (total - minePart2(input)));
 }
 
 function parseInput2(input) {
